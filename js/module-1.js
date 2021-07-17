@@ -18,26 +18,26 @@ console.log(itIsString);
 console.log(typeof itIsString);
 
 // Number
-let number = 4
-console.log(number);
+// let number = 4
+// console.log(number);
 
-let age
-console.log(age);
+// let age
+// console.log(age);
 
-age = 27
-console.log(age);
+// age = 27
+// console.log(age);
 
-const birthYear = 1994
-console.log(birthYear);
-console.log(typeof birthYear);
+// const birthYear = 1994
+// console.log(birthYear);
+// console.log(typeof birthYear);
 
-number = NaN
-console.log(number);
-console.log(typeof number);
+// number = NaN
+// console.log(number);
+// console.log(typeof number);
 
-number = Infinity
-console.log(number);
-console.log(typeof number);
+// number = Infinity
+// console.log(number);
+// console.log(typeof number);
 
 // Boolean
 let isOnline = true
@@ -248,40 +248,102 @@ if (balance >= 0) {
     console.log(`Негативный баланс`);
 }
 
+// * Цыклы 
+// -While
+let clientCounter = 18;
+const maxClients = 25;
+
+while (clientCounter < maxClients) {
+  console.log(clientCounter);
+  clientCounter += 1;
+}
+
+// -Do...while
+// let password = '';
+
+// do {
+//   password = prompt('Введите пароль длиннее 4-х символов', '');
+// } while (password.length < 5);
+
+// console.log('Ввели пароль: ', password);
+
+// -for
+// Посчитаем сумму чисел до определенного значения.
+const target = 8;
+let sum = 0;
+
+for (let i = 0; i <= target; i += 1) {
+  sum += i;
+}
+
+console.log(sum);
+
+// Вспомним про операцию a % b и выведем остаток от деления используя цикл.
+const max = 10;
+for (let i = 0; i < max; i += 1) {
+  console.log(`${max} % ${i} = `, max % i);
+}
+
+// *Break - полностью прекращает выполнение цикла и передаёт управление на строку за его телом.
+// Специально прервем цикл на 5-й итерации.
+for (let i = 0; i < 10; i += 1) {
+  if (i === 5) {
+    console.log('Дошли до 5-й итерации, прерываем цикл!');
+    break;
+  }
+}
+
+for (let i = 0; i <= 10; i += 2) {
+  if (i % 2 === 0) {
+    console.log(` break ${i}`)
+      break;;
+  }
+}
+
+// *Continue
+// Используем цикл для вывода только нечетных чисел.
+//  * Для чётных i срабатывает continue, выполнение тела прекращается
+//   и управление передаётся на следующую итерацию.
+const number = 10;
+for (let i = 0; i < number; i += 1) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  console.log('Нечетное i: ', i); // 1, 3, 5, 7, 9
+}
+
+for (let i = 0; i <= 10; i += 1) {
+  if (i % 2 === 0) {
+    console.log(`continue ${i}`)
+      continue;
+  }
+}
+
+// **Примеры функцый
 // const message = balance >= 0 ? `Позитивный баланс` : `Негативный баланс`;
 // console.log(message);
 
-
 // function makeMessage (name, price) {
-//   // Change code below this line
 //    const message = `You picked ${name}, price per item is ${price} credits`;
-   
-//   // Change code above this line
 //   return message;
 // };
 
 
 // function makeOrderMessage (orderedQuantity, pricePerDroid, deliveryFee) {
-//   // Change code below this line
-
 // const totalPrice = (2 * 100 + 50);
 //   const message = `You ordered droids worth ${totalPrice}, credits. Delivery (${deliveryFee} credits) is include in total price.`
-
-//   // Change code above this line
 //   return message;
 // }
 
 
 // function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 //   let message;
-//   // Change code below this line
 // const totalPrice = pricePerDroid * orderedQuantity;
 //   if (totalPrice > customerCredits) {
 //   message = `Insufficient funds!`;
 //   } else {
 //     message = `You ordered ${orderedQuantity} droids, you have ${customerCredits - totalPrice} credits left`;
 //   }
-//   // Change code above this line
 //   return message;
 // }
 
@@ -296,24 +358,13 @@ if (balance >= 0) {
 // Результатом выражения проверки будет буль true или false.
 
 // function isNumberInRange(start, end, number) {
-//   const isInRange = number >= start && number <= end; // Change this line
-
+//   const isInRange = number >= start && number <= end; 
 //   return isInRange;
 // }
 
 
-// let password = '';
-
-// do {
-//   password = prompt('Введите пароль длиннее 4-х символов', '');
-// } while (password.length < 5);
-
-// console.log('Ввели пароль: ', password);
-
-
 // * Функция getDiscount(totalSpent) определяет значение скидки в зависимости от общей суммы потраченных денег(параметр totalSpent) в магазине за всё время(партнёрская программа).
 // Скидка записывается в переменную discount и возвращается из функции как результат её работы.
-
 // Используя ветвления и логические операторы, дополни код функции.
 
 // Если потрачено от 50000 ( включительно ) или больше кредитов - скидка 10% (золотой партнёр)
@@ -346,16 +397,15 @@ if (balance >= 0) {
 // function checkPassword(password) {
 //   const ADMIN_PASSWORD = "jqueryismyjam";
 //     let message;
-    
 // 	switch (password) {
 //       case null:
 //         message = "Canceled by user!";
 //         break;
-        
+
 //       case ADMIN_PASSWORD:
 //         message = "Welcome!";
 //         break;
-        
+
 //       default:
 //         message = "Access denied, wrong password!";
 //     }
@@ -366,9 +416,7 @@ let getSubstring = "Repair droid"
 console.log(getSubstring.slice(0, 3));
 
 // * Функция formatMessage(message, maxLength) принимает строку (параметр message) и форматирует её, если длина превышает значение в параметре maxLength.
-
 // Дополни код функции так, что если длина строки:
-
 // не превышает maxLength, функция возвращает её в исходном виде.
 // больше maxLength, то функция обрезает строку до maxLength символов и добавляет в конец троеточие "...", после чего возвращает укороченную версию.
 
@@ -386,7 +434,6 @@ console.log(getSubstring.slice(0, 3));
 
 // * Функция checkForSpam(message) принимает строку(параметр message), проверяет её на содержание запрещенных слов spam и sale, и возвращает результат проверки.
 // Слова в строке параметра message могут быть в произвольном регистре, например SPAM или sAlE.
-
 // Если нашли запрещенное слово (spam или sale) то функция возвращает буль true.
 // Если в строке нет запрещенных слов, функция возвращает буль false.
 
