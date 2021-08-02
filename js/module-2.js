@@ -286,6 +286,14 @@ const myArrowFunc = (param1) => {
   console.log(`Это стрелочная функция`)
 }
 
+// const getTotal = (a, b) => {
+//   return a + b;
+// }
+
+const getTotal = (a, b) => a + b;
+
+console.log(getTotal(2, 7));   //  9
+
 
 /*   Псевдомассив - arguments
 */
