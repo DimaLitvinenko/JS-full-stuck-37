@@ -261,10 +261,10 @@ console.log(evenNumbers); // [4, 6, 8, 10]
 
 
 
-/*  Функции 
-      
+/*  ФУНКЦИИ
 */
     // FUNCTION EXPRESSION
+
 //                      ***   myFunc() // * Нельзя вызывать до объявления
 const myFunc = function (param1, param2) {
   // перечисляем действия - инструкции, которые должны выполниться
@@ -273,13 +273,18 @@ const myFunc = function (param1, param2) {
   )
   //   console.log(param1, param2)
 }
+
+
     // FUNCTION DECLARATION
+
 //                     ***   myFuncDecl() // * Можно вызвать до объявления
 function myFuncDecl(param) {
   console.log(`Это декларативное объявление`)
 }
 
+
     // ARROW FUNCTION - ES6
+
 //                    ***   myArrowFunc() // * Нельзя вызывать до объявления
 const myArrowFunc = (param1) => {
   // перечисляем действия - инструкции, которые должны выполниться

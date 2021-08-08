@@ -1,5 +1,6 @@
 /* ** Модуль 1. 
-  ** Задание 1.
+
+*   Задание 1.
 */
 // const dateOfBirth = prompt(`Введите год рождения`);
 // const leapYear = [1992, 1996, 2000, 2004, 2008, 2012, 2016, 2020];
@@ -28,8 +29,9 @@ const checkYear = function (year) {
 console.log(checkYear(2010));
 
 
-// Задание 2 
-
+/*
+*   Задание 2 
+*/
 // const game = function () {
 //   let comp = Math.ceil(Math.random() * (10 - 1) + 1);
 //   let user = prompt(`Введите число от 1 до 10.`);
@@ -41,8 +43,9 @@ console.log(checkYear(2010));
 // console.log(game());
 
 
-// Задание 3
-
+/*
+*   Задание 3
+*/
 const getMathResult = function () {
   let num1 = prompt(`Enter the first number`);
   let num2 = prompt(`Enter the second number`);

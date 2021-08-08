@@ -5,10 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JS</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    
+        button {
+            margin: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+        }
+    
+        .counter {
+            display: flex;
+            align-items: center;
+        }
+    
+        .counter>p {
+            margin: 0;
+            font-size: 48px;
+            font-family: monospace;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- js/module-4-callback.js -> (КОЛИЧЕСТВО КЛИКОВ ПО КНОПКЕ) -->
+    <button class="js-button">
+        Это кнопка
+        <span role="image" aria-label="Иконка волшебника">🧙‍♂️</span>
+    </button>
+
+    <!-- js/practice/counter-module-4.js -->
+    <div class="counter">
+        <button id="dec" class="js-decrement">Уменьшить</button>
+        <p id="count" class="js-value">0</p>
+        <button id="inc" class="js-increment">Увеличить</button>
+    </div>
+   
     <div class="container">
         <ul>
             <li>

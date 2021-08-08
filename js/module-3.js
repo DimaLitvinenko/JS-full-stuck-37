@@ -8,6 +8,17 @@ const colorPickedData = {
 console.log(colorPickedData);     //  {color: "tomato"}
 
 
+const userA = {
+  userName: "Mango",
+  age: 20,
+};
+const userB = userA;
+console.log(userB);       // {userName: "Mango", age: 20}
+
+userB.age = 30;
+console.log(userB.age, userA.age);    // 30 и 30
+
+
 const hotel = {
   name: 'Resort Hotel',
   stars: 5,
@@ -782,7 +793,7 @@ console.log(`Total: `, cart.countTotalPrice());     //  Сумма всех пр
 // console.table(cart.getItems());      //  Удаляет продукт
 
 cart.updatePrice('🍇', 85);          
-console.table(cart.getItems());     //  Обновляет цену продукта 
+console.table(cart.getItems());       //  Обновляет цену продукта 
 
 console.log(`Total: `, cart.countTotalPrice());     //  Сумма всех продуктов
 
