@@ -533,6 +533,7 @@ console.log(customer.getBalance()); // 19750
 console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
 
 
+
 // Сервису приготовления и доставки еды требуется функция генерации сообщений о статусе заказа.
 
 // Дополни функцию composeMessage(position) так, чтобы она возвращала строку в формате 
@@ -563,6 +564,7 @@ for (let i = 0; i < orders.length; i += 1) {
 }
 
 console.log(messages);  // ["Готовим Burger для solomon@topmail.ua. Ваш заказ 1-й в очереди.", "Готовим Pizza для artemis@coldmail.net. Ваш заказ 2-й в очереди.", "Готовим Taco для jacob@mail.com. Ваш заказ 3-й в очереди."]
+
 
 
 // Функция composeMessage(customerName) создаёт приветственные сообщения для ресторанов. 

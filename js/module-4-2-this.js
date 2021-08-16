@@ -199,3 +199,141 @@ const showProduct = function (product, callback) {
 showProduct(product.name, product.changePrice.bind(product, 35));       // The Banana cost: 35kr now
 showProduct(product1.name, product.changePrice.bind(product1, 99));     // The Ananas cost: 99kr now
 
+
+
+/*
+*  PRACTICE
+
+*    1 and 2 
+*/ 
+const every = function (array, callback) {           //* ----- FUNCTION EXPRESSION *
+    const results = [];
+
+    for (let elem of array) {
+        let condition = callback(elem);
+        // console.log(condition);
+
+        results.push(condition);
+    };
+
+    console.log(results);
+
+    // if (results.includes(false)) {
+    //     return false;
+    // } else {
+    //     return true;
+    // };
+    return results.includes(false) ? false : true;
+};
+
+const getLessThenTen = function (number) {
+    // if (number < 10) {
+    //     return true;
+    // } else {
+    //     return false;
+    // };
+    return number < 10 ? true : false;
+};
+
+const getMoreThenTen = function (number) {
+    // if (number > 10) {
+    //     return true;
+    // } else {
+    //     return false;
+    // };
+    return number > 10 ? true : false;
+};
+
+let result = every([1, 11, 2, 220, 3, 33], getLessThenTen);     // [true, false, true, false, true, false]
+// console.log(result);                                      // false
+
+result = every([1, 2, 3, 4, 5], getLessThenTen);      // [true, true, true, true, true]
+// console.log(result);                            // true
+
+result = every([1, 2, 3, 23, 5], getMoreThenTen);     // [false, false, false, true, false]
+// console.log(result);                            // false
+
+result = every([12, 45, 67, 11], getMoreThenTen);     // [true, true, true, true]
+// console.log(result);                            // true
+
+
+/*
+*    3
+*/
+function compact(array, callback) {           //* ----- FUNCTION DECLARATION *
+    const newArray = [];
+
+    for (let value of array) {
+        // console.log(Boolean(value));
+
+        // if (Boolean(value)) newArray.push(value);
+        callback(value, newArray);
+    };
+
+    return newArray;
+};
+
+function getFalsyValues(element, falsyValues) {
+    if (!Boolean(element)) falsyValues.push(element);
+};
+
+function getTruthyValues(element, truthyValues) {
+    if (Boolean(element)) truthyValues.push(element);
+};
+
+console.log(compact([1, 0, '', null, 'Hello'], getFalsyValues));                // [0, "", null]
+console.log(compact([Infinity, ' ', {}, []], getFalsyValues));              // []   
+console.log(compact(['', 0, NaN, null, undefined, false], getFalsyValues));       // ["", 0, NaN, null, undefined, false]   ===  SIX FALSY VALUES ***
+
+console.log(compact([1, 0, '', null, 'Hello'], getTruthyValues));              // [1, "Hello"]
+console.log(compact([Infinity, ' ', {}, []], getTruthyValues));            // [Infinity, " ", {…}, Array(0)]
+console.log(compact(['', 0, NaN, null, undefined, false], getTruthyValues));      // []   ===  SIX FALSY VALUES ***
+
+
+/*
+*    4
+*/
+const ordersA = [
+    { name: 'Phone', price: 12300, deliveryProgress: 50, type: 0 },
+    { name: 'Computer', price: 230000, deliveryProgress: 100, type: 1 },
+    { name: 'Tablet', price: 5000, deliveryProgress: null, type: 2 },
+];
+
+const ordersB = [
+    { name: 'Phone', price: 12300, deliveryProgress: 45, type: 0 },
+    { name: 'Tablet', price: 5000, deliveryProgress: undefined, type: 2 },
+];
+
+const showDeliveryStatus = function (array) {
+    // let progress;
+    let message;
+    const results = [];
+
+    for (let order of array) {
+        // progress = order.deliveryProgress
+        let { deliveryProgress: progress } = order;
+
+        console.log(order);
+        console.log(progress);
+
+        if (progress === 100) {
+            message = `Done`
+            results.push(message);
+        } else if (progress < 100 && progress >= 1) {
+            message = `In progress`
+            results.push(message);
+        } else if (progress === null) {
+            message = `Ready to delivery`
+            results.push(message);
+        } else {
+            message = 'Not Ordered'
+            results.push(message);
+        };
+    };
+    
+    return results.join(', ');
+};
+
+console.log(showDeliveryStatus(ordersA));       // In progress, Done, Ready to delivery
+
+console.log(showDeliveryStatus(ordersB))        // In progress, Not Ordered
