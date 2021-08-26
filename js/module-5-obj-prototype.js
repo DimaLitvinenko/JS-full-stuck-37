@@ -46,8 +46,7 @@ console.log(objF.x);            // undefined
 
 
 
-
-  //    TASK (telegram bot)
+  //   💢 TASKs (telegram bot)
 
 // Измени код так, чтобы объект parent стал прототипом для объекта в переменной сhild.
 // const parent = {

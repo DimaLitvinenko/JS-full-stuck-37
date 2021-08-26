@@ -18,8 +18,9 @@
 // import "./js/module-5-2-inheritance.js"
 
 // import "./js/module-6-array-methods.js"      
-// import "./js/module-6-telegram-bot.js"          // + Telegram Bot
-// import "./js/module-6-2-logash.js"
+// import "./js/module-6-telegram-bot.js"       // Telegram Bot
+// import "./js/module-6-2-lodash.js"
+
 
 // PRACTICE
 
@@ -27,3 +28,5 @@ import "./js/practice/the-task.js";
 // import "./js/practice/practice-module-3.js"
 // import "./js/practice/counter-module-4.js"
 // import "./js/practice/counter-module-5.js"
+
+import "./js/practice/practice__proto__prototype.js"
