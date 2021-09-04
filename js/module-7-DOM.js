@@ -51,9 +51,9 @@ console.log(elemsByDescendant);
 
 // ⭕ Навигация: 
 
-console.log(btnByTag.parentNode)        // получаем родителя
-console.log(btnByTag.childNodes)        // NodeList + text
-console.log(btnByTag.children)          // HTMLCollection tag only
+console.log(btnByTag.parentNode);        // получаем родителя
+console.log(btnByTag.childNodes);        // NodeList + text
+console.log(btnByTag.children);          // HTMLCollection tag only
 
 /* ⚡
 ⛥  firstChild, lastChild, previousSibling, nextSibling =>  text || element
@@ -77,18 +77,69 @@ btnByTag.classList.toggle('new-button');
 
 
 // ⭕ Создание узлов - ߶ способа:
-
   // ⚈ createElement() =>  object
-const button = document.createElement('button')
-button.textContent = 'click'
-console.log('textContent: ', button.textContent)
-console.dir(button)
-console.log(button)
-button.style.background = 'green'
-button.classList.add('my-btn')
-button.setAttribute('type', 'button')
-button.dataset.type = 'my-button'
+
+const button = document.createElement('button');
+button.textContent = 'click';
+console.log('textContent: ', button.textContent);
+console.dir(button);
+console.log(button);
+button.style.background = 'green';
+button.classList.add('my-btn');
+button.setAttribute('type', 'button');
+button.dataset.type = 'my-button';
 
   // ⚈ `` - строчная разметка =>  string
-const stringBtn = `<button class="my-btn" type="button" data-type="my-button" style="background: red">STRING BTN</button>`
-console.log(stringBtn)
+const stringBtn = `<button class="my-btn" type="button" data-type="my-button" style="background: red">STRING BTN</button>`;
+console.log(stringBtn);
+
+
+// ⭕ Клонирование узлов:
+
+const cloneButtonBefore = button.cloneNode(false);
+cloneButtonBefore.textContent = 'before';
+
+const cloneButtonAfter = button.cloneNode(false);
+cloneButtonAfter.textContent = 'after';
+
+const cloneButtonPrepend = button.cloneNode(false);
+cloneButtonPrepend.textContent = 'prepend';
+
+const cloneButtonAppend = button.cloneNode(false);
+cloneButtonAppend.textContent = 'append';
+
+console.log(cloneButtonBefore);
+
+
+// ⭕ Встраивание элементов - ߶ вида:
+  // • для объектов через createElement
+
+// btnByTag.before(cloneButtonBefore);        // строго перед
+// btnByTag.after(cloneButtonAfter);          // строго после
+// btnByTag.appendChild(cloneButtonAppend);
+// btnByTag.prepend(cloneButtonPrepend);
+// ============ || ==================
+btnByTag.insertAdjacentElement('beforebegin', cloneButtonBefore);
+btnByTag.insertAdjacentElement('afterbegin', cloneButtonPrepend);
+btnByTag.insertAdjacentElement('beforeend', cloneButtonAppend);
+btnByTag.insertAdjacentElement('afterend', cloneButtonAfter);
+
+  // • для строк 
+// btnByTag.innerHTML = stringBtn;
+
+btnByTag.insertAdjacentHTML('beforebegin', stringBtn);
+btnByTag.insertAdjacentHTML('afterbegin', stringBtn);
+btnByTag.insertAdjacentHTML('beforeend', stringBtn);
+btnByTag.insertAdjacentHTML('afterend', stringBtn);
+
+
+// ⭕ Удаление:
+// btnByTag.innerHTML = '';  - можно для строчных
+
+// btnByTag.removeChild(cloneButtonBefore);     // нельзя удалить, потому что не является вложеным элементом
+btnByTag.removeChild(cloneButtonAppend);
+btnByTag.removeChild(cloneButtonPrepend);
+// btnByTag.removeChild(cloneButtonAfter);      // нельзя удалить, потому что не является вложеным элементом
+
+cloneButtonBefore.remove();
+cloneButtonAfter.remove();
