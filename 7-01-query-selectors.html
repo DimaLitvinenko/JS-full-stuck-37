@@ -3,11 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Свойство «навигации» по DOM</title>
+    <title>querySelector*</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <p><a href="/index.html">На главную</a></p>
+    <p><a href="/index.html">🚪На главную</a></p>
+
+    <button type="button" class="magic-btn js-magic-btn">
+      Сделать магию
+      <span class="icon">🧙‍♂️</span>
+    </button>
 
     <ul class="site-nav">
       <li class="site-nav__item">
@@ -21,6 +26,6 @@
       </li>
     </ul>
 
-    <script src="./js/7-04-dom-traversal.js" type="module"></script>
+    <script src="./js/7-01-query-selectors.js" type="module"></script>
   </body>
 </html>
