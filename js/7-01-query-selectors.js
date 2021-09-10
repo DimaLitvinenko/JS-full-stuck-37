@@ -23,3 +23,10 @@ magicBtn.addEventListener('click', () => {
 /*
  * Document.querySelector* и Element.querySelector*
  */
+
+
+const cloneButtonBefore = magicBtn.cloneNode(true)
+// cloneButtonBefore.textContent = 'before'
+console.log(cloneButtonBefore);
+
+magicBtn.after(cloneButtonBefore);

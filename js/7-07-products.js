@@ -46,3 +46,5 @@ const elements = products.map(makeProductCard);
 
 console.log(elements);
 productsContainerEl.append(...elements);
+
+
